@@ -1,6 +1,7 @@
 import React from "react";
 import './Hero.css'
-import {HiLocationMarker} from 'react-icons/hi';
+import {HiLocationMarker} from 'react-icons/hi'
+import CountUp from "react-countup";
 
 const Hero = () => {
 
@@ -28,11 +29,11 @@ return (
 
         <div className="flexColStart hero-des">
 
-            <span>
+            <span className="secondaryText">
                 Find a variety of properties that suit you very easily
                 </span>
                 
-                <span>
+                <span className="secondaryText">
 
                     Forget all difficulties in finding a residence for you
 
@@ -54,7 +55,63 @@ return (
 
             <div className="flexCenter stats">
 
-            
+            <div className="flexColCenter stat">
+
+            <span>
+
+                <CountUp start={8800} end={9000} duration={4}/>
+
+                <span>+</span>
+
+
+            </span>
+
+            <span className="secondaryText">
+
+                Premium Products
+
+            </span>
+
+            </div>
+
+            <div className="flexColCenter stat">
+
+<span>
+
+    <CountUp start={1950} end={2000} duration={4}/>
+
+    <span>+</span>
+
+
+</span>
+
+<span className="secondaryText">
+
+    Happy Customers
+
+</span>
+
+</div>
+
+
+<div className="flexColCenter stat">
+
+<span>
+
+    <CountUp  end={28} />
+
+    <span>+</span>
+
+
+</span>
+
+<span className="secondaryText">
+
+    Award Winning
+
+</span>
+
+</div>
 
             </div>
 
