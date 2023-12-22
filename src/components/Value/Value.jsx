@@ -1,5 +1,6 @@
-import React from "react";
-import './Value.css'
+import React, { useState } from "react";
+
+
 import {
 
         Accordion,
@@ -12,9 +13,9 @@ import {
 }   from 'react-accessible-accordion'
 
 import 'react-accessible-accordion/dist/fancy-example.css';
-import {MdOutlineArrowDropDown} from 'react-icons/md'
-import data from '../../utils/accordion'
-import './Value.css'
+import {MdOutlineArrowDropDown} from 'react-icons/md';
+import data from '../../utils/accordion';
+import './Value.css';
 
 
 const Value = () => {
@@ -68,19 +69,28 @@ return (
 
                     </span>
             
-            <Accordion className="accordion-container" allowMultipleExpanded={false} preExpanded={[0]}>
+            <Accordion className="accordion" allowMultipleExpanded={false} preExpanded={[0]}>
 
             {
 
                 data.map((item,i)=>{
 
+                    const [className, setClassName] = useState(null)
+
                     return(
 
-                            <AccordionItem className="accordionItem" key={i} uuid={i}>
+                       
+                            <AccordionItem className={`accordionItem ${className}`} key={i} uuid={i}>
 
                             <AccordionItemHeading>
 
-                            <AccordionItemButton>
+                            <AccordionItemButton className="flexCenter accordionButton ">
+
+                            <AccordionItemState>
+
+                                {({expanded}) => expanded ? setClassName("expanded") : setClassName("collapsed")}
+
+                            </AccordionItemState>
 
                             <div className="flexCenter icon"> 
 
