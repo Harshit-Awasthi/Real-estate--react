@@ -18,13 +18,13 @@ function App() {
 
       <Header/>
     
-       {/* <Hero/> */}
+       <Hero/> 
 
        
 
       </div>
 
-      {/* <Companies />
+      <Companies />
       <Residencies />
       <Value/>
 
@@ -32,7 +32,7 @@ function App() {
 
       <GetStarted/>
 
-      <Footer/> */}
+      <Footer/>
 
     
     </div>
