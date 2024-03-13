@@ -1,6 +1,7 @@
 .f-container{
 
     justify-content: space-between;
+    border-top: .5px solid rgba(0,0,0,0.148)
 
 
 }
@@ -32,6 +33,10 @@ font-weight: 500;
         align-items: center  !important;
         text-align: center;
 
+    }
+
+    .f-right{
+        justify-content: center;
     }
     
 }

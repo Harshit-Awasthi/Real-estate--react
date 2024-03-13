@@ -5,11 +5,11 @@ import {bookVisit,cancelBooking,createUser,getAllBookings, getAllFavorites, toFa
 
 const router = express.Router();
 
-router.post("/register",createUser);
-router.post("/bookVisit/:id",bookVisit);
+router.post("/register",jwtcheck,createUser);
+router.post("/bookVisit/:id",jwtcheck,bookVisit);
 router.post("/allBookings", getAllBookings)
-router.post("/removebooking/:id",cancelBooking)
-router.post("/toFav/:rid", toFav)
-router.post("/allFav/",getAllFavorites)
+router.post("/removebooking/:id",jwtcheck,cancelBooking)
+router.post("/toFav/:rid", jwtcheck,toFav)
+router.post("/allFav/",jwtcheck,getAllFavorites)
 
 export {router as userRoute}
