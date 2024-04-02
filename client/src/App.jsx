@@ -13,6 +13,8 @@ import Property from "./pages/Property/Property";
 import UserDetailContext from "./context/UserDetailContext";
 import Bookings from "./pages/Bookings/Bookings";
 import Favourites from "./pages/Favourites/Favourites";
+import { createTheme } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
 
 function App() {
   const queryClient = new QueryClient();
@@ -23,8 +25,13 @@ function App() {
     token: null,
   });
 
+  const theme = createTheme({
+    fontFamily: 'serif'
+  });
+
   return (
-    <UserDetailContext.Provider value={{ userDetails, setUserDetails }}>
+    <MantineProvider theme={theme}>
+       <UserDetailContext.Provider value={{ userDetails, setUserDetails }}>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Suspense fallback={<div>Loading...</div>}>
@@ -45,6 +52,7 @@ function App() {
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </UserDetailContext.Provider>
+    </MantineProvider>
   );
 }
 

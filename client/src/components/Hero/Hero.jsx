@@ -27,6 +27,7 @@ const Hero = () => {
             <span>Find a variety of properties that suit you very easilty</span>
             <span>Forget all difficulties in finding a residence for you</span>
           </div>
+          const [filter, setFilter] = useState("");
 
           <SearchBar/>
 
